@@ -79,6 +79,4 @@ g.DFS(n)
 <img width="1454" height="274" alt="image" src="https://github.com/user-attachments/assets/e9e6768e-edbd-4922-a5a7-c5b370d2ab28" />
 
 ## RESULT:
-
-## RESULT
 Thus the Python program to **print DFS traversal** from a given source vertex is executed successfully.
