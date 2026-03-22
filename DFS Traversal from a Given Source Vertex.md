@@ -25,14 +25,60 @@ To write a Python program to **print DFS traversal** from a given source vertex.
 
 **Step 8**: End the program.
 
-## PYTHON PROGRAM
+## PYTHON PROGRAM:
+```
+from collections import defaultdict
+class Graph:
+
+	# Constructor
+	def __init__(self):
+
+		# default dictionary to store graph
+		self.graph = defaultdict(list)
+
+	# function to add an edge to graph
+	def addEdge(self, u, v):
+		self.graph[u].append(v)
+
+	# A function used by DFS
+	def DFSUtil(self, v, visited):
+
+		# Mark the current node as visited
+		# and print it
+		visited.add(v)
+		print(v,end=" ")
+		for neighbour in self.graph[v]:
+		    if neighbour not in visited:
+		        self.DFSUtil(neighbour,visited)
+		
+	# The function to do DFS traversal. It uses
+	# recursive DFSUtil()
+	def DFS(self, v):
+
+		# Create a set to store visited vertices
+		visited = set()
+
+		# Call the recursive helper function
+		# to print DFS traversal
+		self.DFSUtil(v, visited)
+n=int(input())
+g = Graph()
+g.addEdge(0, 1)
+g.addEdge(0, 2)
+g.addEdge(1, 2)
+g.addEdge(2, 0)
+g.addEdge(2, 3)
+g.addEdge(3, 3)
+
+print("Following is DFS from (starting from vertex {})".format(n))
+g.DFS(n)
 
 ```
-ENTER YOUR CODE HERE
-```
 
-## OUTPUT
-```
-```
+## OUTPUT:
+<img width="1454" height="274" alt="image" src="https://github.com/user-attachments/assets/e9e6768e-edbd-4922-a5a7-c5b370d2ab28" />
+
+## RESULT:
 
 ## RESULT
+Thus the Python program to **print DFS traversal** from a given source vertex is executed successfully.
